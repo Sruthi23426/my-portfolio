@@ -1,0 +1,912 @@
+<!-- Save this as index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sruthi Chaganti | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:'Poppins',sans-serif;
+            background:#f4f6f9;
+            color:#1f2937;
+            line-height:1.7;
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            position:fixed;
+            width:100%;
+            top:0;
+            z-index:1000;
+            background:#ffffff;
+            box-shadow:0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .nav-container{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:18px 0;
+        }
+
+        .logo{
+            font-size:1.4rem;
+            font-weight:700;
+            color:#0f172a;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:25px;
+        }
+
+        .nav-links a{
+            font-size:0.95rem;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover{
+            color:#2563eb;
+        }
+
+        /* HERO */
+
+        .hero{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            background:linear-gradient(to right,#e2e8f0,#f8fafc);
+            padding-top:90px;
+        }
+
+        .hero-content{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:50px;
+            align-items:center;
+        }
+
+        .hero-text h3{
+            color:#2563eb;
+            font-size:1.1rem;
+            margin-bottom:10px;
+        }
+
+        .hero-text h1{
+            font-size:3.2rem;
+            color:#0f172a;
+            margin-bottom:10px;
+        }
+
+        .hero-text h2{
+            font-size:1.4rem;
+            font-weight:500;
+            color:#475569;
+            margin-bottom:20px;
+        }
+
+        .hero-text p{
+            color:#475569;
+            margin-bottom:30px;
+        }
+
+        .btn-group{
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            padding:12px 24px;
+            border-radius:8px;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        .primary-btn{
+            background:#2563eb;
+            color:white;
+        }
+
+        .primary-btn:hover{
+            background:#1d4ed8;
+        }
+
+        .secondary-btn{
+            border:2px solid #2563eb;
+            color:#2563eb;
+        }
+
+        .secondary-btn:hover{
+            background:#2563eb;
+            color:white;
+        }
+
+        .hero-image{
+            display:flex;
+            justify-content:center;
+        }
+
+        .hero-image img{
+            width:350px;
+            height:350px;
+            object-fit:cover;
+            border-radius:20px;
+            border:8px solid white;
+            box-shadow:0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* SECTION */
+
+        section{
+            padding:90px 0;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:50px;
+        }
+
+        .section-title h2{
+            font-size:2.3rem;
+            color:#0f172a;
+        }
+
+        .section-title p{
+            color:#64748b;
+            margin-top:10px;
+        }
+
+        /* ABOUT */
+
+        .about-content{
+            background:white;
+            padding:40px;
+            border-radius:18px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .about-content p{
+            color:#475569;
+            font-size:1rem;
+        }
+
+        /* SKILLS */
+
+        .skills-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+
+        .skill-card{
+            background:white;
+            padding:30px;
+            border-radius:18px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.06);
+            transition:0.3s;
+        }
+
+        .skill-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .skill-card h3{
+            margin-bottom:15px;
+            color:#0f172a;
+        }
+
+        .skill-card ul{
+            padding-left:18px;
+            color:#475569;
+        }
+
+        /* PROJECTS */
+
+        .project-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:30px;
+        }
+
+        .project-card{
+            background:white;
+            border-radius:18px;
+            padding:30px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.06);
+            transition:0.3s;
+        }
+
+        .project-card:hover{
+            transform:translateY(-8px);
+        }
+
+        .project-card h3{
+            color:#0f172a;
+            margin-bottom:15px;
+        }
+
+        .project-card p{
+            color:#475569;
+            margin-bottom:15px;
+        }
+
+        .tag-container{
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+
+        .tag{
+            background:#dbeafe;
+            color:#1d4ed8;
+            padding:6px 12px;
+            border-radius:30px;
+            font-size:0.85rem;
+        }
+
+        /* EDUCATION */
+
+        .education-card{
+            background:white;
+            padding:35px;
+            border-radius:18px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .education-card h3{
+            color:#0f172a;
+        }
+
+        .education-card p{
+            color:#475569;
+            margin-top:10px;
+        }
+
+        /* LANGUAGE */
+
+        .language-box{
+            background:white;
+            padding:30px;
+            border-radius:18px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .language{
+            margin-bottom:25px;
+        }
+
+        .language-top{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:8px;
+        }
+
+        .bar{
+            width:100%;
+            height:10px;
+            background:#e2e8f0;
+            border-radius:20px;
+            overflow:hidden;
+        }
+
+        .fill{
+            height:100%;
+            background:#2563eb;
+            border-radius:20px;
+        }
+
+        /* LEADERSHIP */
+
+        .leadership-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:25px;
+        }
+
+        .lead-card{
+            background:white;
+            padding:30px;
+            border-radius:18px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .lead-card h3{
+            margin-bottom:12px;
+            color:#0f172a;
+        }
+
+        .lead-card p{
+            color:#475569;
+        }
+
+        /* CONTACT */
+
+        .contact{
+            background:#0f172a;
+            color:white;
+        }
+
+        .contact-content{
+            text-align:center;
+        }
+
+        .contact-content h2{
+            font-size:2.2rem;
+            margin-bottom:20px;
+        }
+
+        .contact-details{
+            margin-top:30px;
+        }
+
+        .contact-details p{
+            margin-bottom:10px;
+            color:#cbd5e1;
+        }
+
+        .socials{
+            margin-top:25px;
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .socials a{
+            padding:10px 18px;
+            background:#1e293b;
+            border-radius:8px;
+            transition:0.3s;
+        }
+
+        .socials a:hover{
+            background:#2563eb;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            background:#020617;
+            color:#94a3b8;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px){
+
+            .hero-content{
+                grid-template-columns:1fr;
+                text-align:center;
+            }
+
+            .hero-image{
+                order:-1;
+            }
+
+            .hero-text h1{
+                font-size:2.5rem;
+            }
+
+            .btn-group{
+                justify-content:center;
+            }
+
+            .nav-links{
+                gap:15px;
+            }
+        }
+
+        @media(max-width:600px){
+
+            .nav-container{
+                flex-direction:column;
+                gap:10px;
+            }
+
+            .nav-links{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .hero-image img{
+                width:260px;
+                height:260px;
+            }
+
+            .hero-text h1{
+                font-size:2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Sruthi Chaganti</div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <h3>Hello, I'm</h3>
+
+                <h1>CHAGANTI LAKSHMI SRUTHI</h1>
+
+                <h2>Final Year CSE Student | Aspiring Software Engineer</h2>
+
+                <p>
+                    Passionate about building impactful software solutions with strong
+                    foundations in Java, Data Structures & Algorithms, SQL, and Web Development.
+                    Interested in creating scalable applications and solving real-world
+                    challenges through technology and innovation.
+                </p>
+
+                <div class="btn-group">
+                    <a href="resume/SruthiChaganti_Resume.pdf" class="btn primary-btn" target="_blank">
+                        View Resume
+                    </a>
+
+                    <a href="#contact" class="btn secondary-btn">
+                        Contact Me
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+                <!-- Replace with your photo -->
+                <img src="images/sruthipfp.jpeg" alt="Sruthi Photo">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Professional Summary</p>
+            </div>
+
+            <div class="about-content">
+
+                <p>
+                    I am a Computer Science student with a strong academic background and
+                    a deep interest in software engineering, full-stack development,
+                    and problem solving. I enjoy designing responsive web applications,
+                    learning emerging technologies, and working on innovative ideas that
+                    create meaningful user experiences.
+                    <br><br>
+
+                    My technical interests include backend development, database management,
+                    machine learning concepts, and scalable application design.
+                    I am continuously improving my skills through projects,
+                    certifications, and collaborative activities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+                <p>Technologies & Tools</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>Programming</h3>
+
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>Object-Oriented Programming</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Web Development</h3>
+
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Database & Core</h3>
+
+                    <ul>
+                        <li>MySQL</li>
+                        <li>DBMS</li>
+                        <li>Data Structures & Algorithms</li>
+                        <li>Machine Learning Basics</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Soft Skills</h3>
+
+                    <ul>
+                        <li>Leadership</li>
+                        <li>Communication</li>
+                        <li>Team Collaboration</li>
+                        <li>Analytical Thinking</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Projects</h2>
+                <p>Some of my recent work</p>
+            </div>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+
+                    <h3>NutriSmart – Personalized Nutrition Platform</h3>
+
+                    <p>
+                        Developed a modern nutrition-focused web application that provides
+                        personalized calorie tracking and diet recommendations based on
+                        user preferences and health goals.
+                        Designed responsive user interfaces and structured backend logic
+                        for seamless user interaction and scalability.
+                    </p>
+
+                    <div class="tag-container">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+
+                </div>
+
+                <div class="project-card">
+
+                    <h3>Personal Portfolio Website</h3>
+
+                    <p>
+                        Designed and built a responsive personal portfolio website
+                        showcasing projects, technical expertise, certifications,
+                        and academic achievements with a clean and professional UI.
+                        Implemented responsive layouts and version control workflows
+                        using GitHub.
+                    </p>
+
+                    <div class="tag-container">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">Responsive UI</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Education</h2>
+                <p>Academic Background</p>
+            </div>
+
+            <div class="education-card">
+
+                <h3>B.Tech in Computer Science and Engineering</h3>
+
+                <p>
+                    Vellore Institute of Technology - Andhra Pradesh
+                    <br><br>
+
+                    2023 - Present
+                    <br>
+
+                    Current CGPA: 9.66
+                    <br>
+
+                    Expected Graduation: 2027
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CERTIFICATIONS -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Certifications</h2>
+                <p>Learning & Development</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>Java Programming Masterclass</h3>
+                    <p>Core Java & Java SE – Udemy</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Problem Solvers</h3>
+                    <p>Mastering Data Structures & Algorithms</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Web Bootcamp – Season 2</h3>
+                    <p>Microsoft Learn Student Ambassador Program</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- LANGUAGE SKILLS -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Languages</h2>
+                <p>Communication Proficiency</p>
+            </div>
+
+            <div class="language-box">
+
+                <div class="language">
+
+                    <div class="language-top">
+                        <span>English</span>
+                        <span>Professional</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="fill" style="width:90%"></div>
+                    </div>
+
+                </div>
+
+                <div class="language">
+
+                    <div class="language-top">
+                        <span>Telugu</span>
+                        <span>Native</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="fill" style="width:100%"></div>
+                    </div>
+
+                </div>
+
+                <div class="language">
+
+                    <div class="language-top">
+                        <span>Hindi</span>
+                        <span>Intermediate</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="fill" style="width:70%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- LEADERSHIP -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Leadership & Activities</h2>
+                <p>Experience Beyond Academics</p>
+            </div>
+
+            <div class="leadership-grid">
+
+                <div class="lead-card">
+
+                    <h3>Team Lead – Wadhwani Ignite 3.4</h3>
+
+                    <p>
+                        Led a student team in planning and presenting a startup concept,
+                        including budgeting strategies and collaborative execution.
+                    </p>
+
+                </div>
+
+                <div class="lead-card">
+
+                    <h3>Documentation Team Lead – Innovators Quest</h3>
+
+                    <p>
+                        Coordinated documentation workflows and contributed to
+                        organized event management activities at VIT-AP University.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HOBBIES -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Hobbies & Interests</h2>
+                <p>Things I Enjoy</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>Reading</h3>
+                    <p>Exploring books and articles related to technology and self-growth.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Music</h3>
+                    <p>Listening to relaxing and inspiring music during work and travel.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Exploring Technologies</h3>
+                    <p>Learning modern tools, frameworks, and software engineering concepts.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="container contact-content">
+
+            <h2>Get In Touch</h2>
+
+            <p>
+                Feel free to connect with me for opportunities,
+                collaborations, or technical discussions.
+            </p>
+
+            <div class="contact-details">
+
+                <p>📞 7386352349   |   📧 sruthichaganti06@gmail.com </p>
+
+            </div>
+
+            <div class="socials">
+
+                <a href="https://github.com/Sruthi23426" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://linkedin.com/in/sruthi-chaganti-l" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="https://leetcode.com/u/sruthichaganti/" > 
+                    LeetCode 
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Sruthi Chaganti | Portfolio Website
+    </footer>
+
+</body>
+</html>
