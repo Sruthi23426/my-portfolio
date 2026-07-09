@@ -1,18 +1,40 @@
-# Sruthi�s Portfolio 
- Hello there! I�m Sruthi Chaganti, and this is my online portfolio. Welcome to my corner of the internet where I showcase my journey, skills, and projects.
+# 💼 Personal Portfolio Website
 
-## Features
-- Responsive design
-- About Me section
+A responsive personal portfolio website developed to showcase my technical skills, projects, certifications, education, and leadership experience. The portfolio is designed with a clean and modern interface to provide an overview of my academic background and software development journey.
+
+### Features
+
+- Responsive and modern UI
+- Professional About Me section
+- Technical Skills overview
 - Projects showcase
-- Technical skills
-- Resume download
-- Contact information
+- Education details
+- Certifications
+- Leadership & Activities
+- Language proficiency
+- Contact section with GitHub, LinkedIn, and LeetCode links
+- Resume download option
 
-## Technologies Used
+### Tech Stack
+
 - HTML5
 - CSS3
-- JavaScript (Basics)
+- JavaScript
 
-## Author
-CHAGANTI LAKSHMI SRUTHI
+### Project Structure
+
+- `index.html` – Main portfolio page
+- `images/` – Images and profile picture
+- `SruthiChaganti_Resume.pdf` – Resume
+- `README.md` – Project documentation
+
+### Live Demo
+
+🌐 **Portfolio:** https://sruthi23426.github.io/my-portfolio/
+
+### 👩‍💻 Author
+
+**Sruthi Chaganti**<br>
+
+B.Tech Computer Science and Engineering<br>
+VIT-AP University
