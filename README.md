@@ -1,4 +1,4 @@
-# 💼 Personal Portfolio Website
+## Sruthi's Portfolio
 
 A responsive personal portfolio website developed to showcase my technical skills, projects, certifications, education, and leadership experience. The portfolio is designed with a clean and modern interface to provide an overview of my academic background and software development journey.
 
